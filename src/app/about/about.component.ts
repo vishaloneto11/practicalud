@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MetaServicesService } from '../Services/meta-services.service';
+import { SeoservicesService } from '../Services/seoservices.service';
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -7,20 +8,38 @@ import { MetaServicesService } from '../Services/meta-services.service';
 })
 export class AboutComponent implements OnInit {
 
-  constructor(private metaservice: MetaServicesService) {
+  hostName = "https://www.nebula.com"
+
+  constructor(private seoservices: SeoservicesService) {
 
   }
 
   ngOnInit(): void {
-    this.createLinkForCanonicalURL();
+
+    this.seoservices.updateCanonicalUrl();
+    // this.seoservices.updateCanonicalUrl(this.hostName + '/about');
   }
-  setPageTitle(title: string) {
-    this.metaservice.setPageTitle(title);
-  }
-  getPageTitle() {
-  }
-  createLinkForCanonicalURL() {
-    this.metaservice.createLinkForCanonicalURL();
-  }
+
+
+
+
+
+
+
+  // constructor(private metaservice: MetaServicesService) {
+
+  // }
+
+  // ngOnInit(): void {
+  //   this.createLinkForCanonicalURL();
+  // }
+  // setPageTitle(title: string) {
+  //   this.metaservice.setPageTitle(title);
+  // }
+  // getPageTitle() {
+  // }
+  // createLinkForCanonicalURL() {
+  //   this.metaservice.createLinkForCanonicalURL();
+  // }
 
 }

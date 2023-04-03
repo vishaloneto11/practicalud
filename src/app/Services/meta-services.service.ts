@@ -7,7 +7,7 @@ import { DOCUMENT } from '@angular/common';
 })
 export class MetaServicesService {
 
-  constructor(private title: Title, @Inject(DOCUMENT) private doc: any) {
+  constructor(private title: Title, @Inject(DOCUMENT) private dom: any) {
   }
   setPageTitle(title: string) {
     this.title.setTitle(title);
@@ -16,9 +16,10 @@ export class MetaServicesService {
     return this.title.getTitle();
   }
   createLinkForCanonicalURL() {
-    let link: HTMLLinkElement = this.doc.createElement('link');
+    let link: HTMLLinkElement = this.dom.createElement('link');
     link.setAttribute('rel', 'canonical');
-    this.doc.head.appendChild(link);
-    link.setAttribute('href', this.doc.URL);
+    this.dom.head.appendChild(link);
+    link.setAttribute('href', this.dom.URL);
   }
+
 }

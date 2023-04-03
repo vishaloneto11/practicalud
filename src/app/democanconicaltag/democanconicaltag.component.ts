@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MetaServicesService } from '../Services/meta-services.service';
+import { SeoservicesService } from '../Services/seoservices.service';
+
 
 @Component({
   selector: 'app-democanconicaltag',
@@ -9,21 +11,30 @@ import { MetaServicesService } from '../Services/meta-services.service';
 export class DemocanconicaltagComponent implements OnInit {
 
 
+  hostName = "https://www.nebula.com"
 
-  constructor(private metaservice: MetaServicesService) {
+  constructor(private seoservices: SeoservicesService) {
 
   }
 
   ngOnInit(): void {
-    this.createLinkForCanonicalURL();
+
+    this.seoservices.updateCanonicalUrl();
   }
-  setPageTitle(title: string) {
-    this.metaservice.setPageTitle(title);
-  }
-  getPageTitle() {
-  }
-  createLinkForCanonicalURL() {
-    this.metaservice.createLinkForCanonicalURL();
-  }
+  // constructor(private metaservice: MetaServicesService) {
+
+  // }
+
+  // ngOnInit(): void {
+  //   this.createLinkForCanonicalURL();
+  // }
+  // setPageTitle(title: string) {
+  //   this.metaservice.setPageTitle(title);
+  // }
+  // getPageTitle() {
+  // }
+  // createLinkForCanonicalURL() {
+  //   this.metaservice.createLinkForCanonicalURL();
+  // }
 
 }

@@ -1,5 +1,5 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
-import { MetaServicesService } from '../Services/meta-services.service';
+import { Component, OnInit } from '@angular/core';
+import { SeoservicesService } from '../Services/seoservices.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,19 +7,15 @@ import { MetaServicesService } from '../Services/meta-services.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private metaservice: MetaServicesService) {
+  constructor(private seoservices: SeoservicesService) {
 
   }
+
 
   ngOnInit(): void {
-    this.createLinkForCanonicalURL();
+
+    this.seoservices.updateCanonicalUrl();
   }
-  setPageTitle(title: string) {
-    this.metaservice.setPageTitle(title);
-  }
-  getPageTitle() {
-  }
-  createLinkForCanonicalURL() {
-    this.metaservice.createLinkForCanonicalURL();
-  }
+
+
 }
