@@ -12,6 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { FeatureComponent } from './feature/feature.component';
 import { HeaderComponent } from './header/header.component';
+import { DynamicPageComponent } from './dynamic-page/dynamic-page/dynamic-page.component';
+import { ProductComponent } from './product/product.component';
 
 
 @NgModule({
@@ -25,6 +27,8 @@ import { HeaderComponent } from './header/header.component';
     AboutComponent,
     FeatureComponent,
     HeaderComponent,
+    DynamicPageComponent,
+    ProductComponent,
 
   ],
   imports: [
