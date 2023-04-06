@@ -14,7 +14,7 @@ export class DynamicPageComponent implements OnInit {
   constructor(private seoService: SeoservicesService) { }
 
   ngOnInit() {
-    this.seoService.updateCanonicalUrlf(this.hostName + '');
+    this.seoService.updateCanonicalUrl();
   }
 
 

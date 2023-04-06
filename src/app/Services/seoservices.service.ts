@@ -16,7 +16,13 @@ export class SeoservicesService {
       head.appendChild(element);
     }
     element.setAttribute('rel', 'canonical')
-    element.setAttribute('href', this.dom.URL)
+    const myurl = this.dom.URL;
+    const finalUrl = this.dom.URL.split('?')[0]
+    console.log("v", myurl)
+    console.log("p", finalUrl)
+    element.setAttribute('href', finalUrl)
+
+
   }
   // via core approach 
   updateCanonicalUrlf(url: string) {
